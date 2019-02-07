@@ -13,7 +13,7 @@
 
 /*
 ; Expected output:
-; Calculate and display the total cost based on the cost per hour, number of hours and the number of users
+; Calculate and display the total cost of training based on the cost per hour, number of hours and the number of users
 */
 
 // variable declaration and assignment goes here...
@@ -25,6 +25,7 @@ costPerHour = 250.25;
 numberOfHours = 10;
 numberOfUsers = 5;
 
+// calculate the total cost of training
 var  totalCost = numberOfUsers
 numberOfHours * costPerHour; 
 

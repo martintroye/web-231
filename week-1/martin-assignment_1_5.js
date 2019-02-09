@@ -49,13 +49,13 @@ console.log(addressA);
 console.log(payRateA.toFixed(1));
 // format the date without modifying the original value
 console.log(hireDateA.toLocaleDateString("en-US"));
-
+console.log("");
 console.log(firstNameB);
 console.log(lastNameB);
 console.log(addressB);
 console.log(payRateB.toFixed(1));
 console.log(hireDateB.toLocaleDateString("en-US"));
-
+console.log("");
 console.log(firstNameC);
 console.log(lastNameC);
 console.log(addressC);

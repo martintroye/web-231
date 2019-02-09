@@ -22,7 +22,7 @@ var age = "50";
 var street = "12345 Main St";
 var city = "Omaha";
 var state = "NE";
-var zipCode = "68521";
+var zipCode = "68127";
 
 
 // output

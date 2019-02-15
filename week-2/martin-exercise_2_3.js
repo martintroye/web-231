@@ -23,6 +23,7 @@ myName.greeting = "Hello"
 myName.troy = "Troy";
 myName.martin = "Martin";
 
+// Define the function that will be used to output the function properties.
 function myName(){
   // Use JavaScript string interpolation feature to concatenate the function properties into a single string.
   return `${myName.greeting} ${myName.troy} ${myName.martin}!`;

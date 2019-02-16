@@ -54,8 +54,6 @@ function dateWriter(year, month, day){
     return; // return undefined, could throw an Error
   }
 
-  // todo how do we know if the user accounted for the zero based month and day
-
   // create the new date using the year month and day parameters
   return new Date(year, month, day);
 }

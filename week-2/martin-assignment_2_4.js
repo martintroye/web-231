@@ -43,7 +43,7 @@ function fullName(firstName, lastName){
 }
 
 // dataWriter returns a JavaScript date object based on the year, month and day provided.
-// The year month and day are required. Note that month and day are zero based values.
+// The year month and day are required. Note that month is a zero based value.
 // if the year month and day are not valid will return undefined
 function dateWriter(year, month, day){
   // validate that all three parameters were provided and that all three are valid numbers

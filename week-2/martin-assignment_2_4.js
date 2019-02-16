@@ -62,6 +62,7 @@ function dateWriter(year, month, day){
 // if there is a validation error returns 0
 function formatNumber(number, numOfFixedPositions){
   // validate that both number and number of fixed positions are numbers
+  // JavaScript isNan will handle undefined parameters
   if(number === null
     || numOfFixedPositions === null
     || isNaN(number) === true
@@ -76,8 +77,8 @@ function formatNumber(number, numOfFixedPositions){
 // convertToInt returns the supplied value as an integer if it is a valid number otherwise return 0
 function convertToInt(value){
   // validate that the value is defined, not null and is a number otherwise return 0
-  if(value === undefined
-    || value === null
+  // JavaScript isNan will handle undefined parameters
+  if(value === null
     || isNaN(value) === true){
     return 0; // return 0, could throw an Error
   }
@@ -89,8 +90,8 @@ function convertToInt(value){
 // convertToFloat returns the supplied value as a float it is a valid number otherwise return 0
 function convertToFloat(value){
   // validate that the value is defined, not null and is a number otherwise return 0
-  if(value === undefined
-    || value === null
+  // JavaScript isNan will handle undefined parameters
+  if(value === null
     || isNaN(value) === true){
     return 0; // return 0, could throw an Error
   }

@@ -259,7 +259,7 @@ console.log(`Hello my name is ${fullName(fullName.firstName, fullName.lastName)}
 // format the date using en-us the (English US) date format
 console.log(`Today's date is ${dateWriter(dateWriter.year, dateWriter.month, dateWriter.day).toLocaleDateString("en-us")} and the current temperature is ${formatNumber(formatNumber.currentTemp, formatNumber.numberOfPositions)} degrees.`);
 // using string interpolation to display the function results as part of a static string
-console.log(`I am ${convertToInt(convertToInt.myAge)} years old and my savings account goal is ${convertToFloat("100000.99")} dollars.`);
+console.log(`I am ${convertToInt(convertToInt.myAge)} years old and my savings account goal is ${convertToFloat(convertToFloat.mySavingsGoal)} dollars.`);
 
 
 // end program

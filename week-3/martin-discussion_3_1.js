@@ -53,6 +53,7 @@ function processOddItems(values){
 
 // output
 console.log("\n");
+// Use string interpolation to output the return value from the function.
 console.log(`The sum of all odd values is: ${processOddItems(listOfValues)}, the expected value is 45.`)
 
 // end program

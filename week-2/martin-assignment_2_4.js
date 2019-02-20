@@ -255,6 +255,7 @@ console.log("nan", convertToFloat(convertToFloat.nanValue));
 console.log("float", convertToFloat(convertToFloat.floatValue));
 console.log("integer", convertToFloat(convertToFloat.integerValue));
 
+console.log("\n");
 
 // Output my full name, the assignment and the date
 console.log(fullName(fullName.firstName, fullName.lastName));

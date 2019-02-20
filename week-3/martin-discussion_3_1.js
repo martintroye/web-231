@@ -17,7 +17,7 @@
 */
 
 // variable declaration and assignment
-var listOfValues = [1,2,4,5,6,9,8,19,20,21];
+var listOfValues = [1, 2, 4, 5, 6, 9, 8, 19, 20, 21];
 
 // function declarations
 
@@ -50,8 +50,6 @@ function processOddItems(values){
   // Return the sum of all the odd values found in the array
   return sumOfOdds;
 }
-
-
 
 // output
 console.log("\n");

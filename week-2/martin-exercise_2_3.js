@@ -8,6 +8,7 @@
 ;===========================================
 */
 // start program
+const header = require('../martin-header.js');
 
 /*
 ; Expected output:
@@ -22,6 +23,7 @@
 myName.greeting = "Hello"
 myName.troy = "Troy";
 myName.martin = "Martin";
+var assignment = "Exercise 2.3";
 
 // Define the function that will be used to output the function properties.
 function myName(){
@@ -30,6 +32,7 @@ function myName(){
 }
 
 // Output a line break to the console for additional formatting.
+console.log(header.display(myName.troy, myName.martin, assignment));
 console.log("\n");
 // Output the return value of the myName function.
 console.log(myName());

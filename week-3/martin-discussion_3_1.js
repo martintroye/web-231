@@ -19,6 +19,9 @@ const header = require('../martin-header.js');
 
 // variable declaration and assignment
 var listOfValues = [1, 2, 4, 5, 6, 9, 8, 19, 20, 21];
+var firstName = "Troy";
+var lastName = "Martin";
+var assignment = "Discussion 3.1";
 
 // function declarations
 
@@ -53,7 +56,7 @@ function processOddItems(values){
 }
 
 // output
-console.log(header.display("Troy", "Martin", "Discussion 3.1"));
+console.log(header.display(firstName, lastName, assignment));
 console.log("\n");
 // Use string interpolation to output the return value from the function.
 console.log(`The sum of all odd values is: ${processOddItems(listOfValues)}, the expected value is 45.`)

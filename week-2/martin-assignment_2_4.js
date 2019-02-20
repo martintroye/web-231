@@ -8,6 +8,7 @@
 ;===========================================
 */
 // start program
+const header = require('../martin-header.js');
 
 /*
 ;Create a function called fullName with two parameters (first and last name) and a return the two parameters as one string.
@@ -121,6 +122,10 @@ convertToInt.myAge = "50.66";
 // Convert string to float with decimal places to show float
 convertToFloat.mySavingsGoal = "100000.99";
 
+var firstName = "Troy";
+var lastName = "Martin";
+var assignment = "Assignment 2.4";
+
 // Test variables
 
 /*
@@ -162,6 +167,12 @@ convertToFloat.stringValue = "123.04";
 convertToFloat.nanValue = "Troy";
 convertToFloat.floatValue = 10.59;
 convertToFloat.integerValue = 100;
+
+
+// output specified in the starter code for the assignment
+console.log(header.display(firstName, lastName, assignment));
+console.log("\n");
+
 
 
 // Tests
@@ -245,8 +256,6 @@ console.log("float", convertToFloat(convertToFloat.floatValue));
 console.log("integer", convertToFloat(convertToFloat.integerValue));
 
 
-// output specified in the starter code for the assignment
-console.log("\n");
 // Output my full name, the assignment and the date
 console.log(fullName(fullName.firstName, fullName.lastName));
 console.log("Assignment 2.4");

@@ -9,6 +9,7 @@
 */
 
 // start program
+const header = require('../martin-header.js');
 
 /*
 ; Expected output:
@@ -52,6 +53,7 @@ function processOddItems(values){
 }
 
 // output
+console.log(header.display("Troy", "Martin", "Discussion 3.1"));
 console.log("\n");
 // Use string interpolation to output the return value from the function.
 console.log(`The sum of all odd values is: ${processOddItems(listOfValues)}, the expected value is 45.`)

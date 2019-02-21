@@ -9,6 +9,8 @@
 */
 
 // start program
+
+// Require statement that imports the martin-header.js file from my root directory.
 const header = require('../martin-header.js');
 
 /*
@@ -56,8 +58,9 @@ function processOddItems(values){
 }
 
 // output
-console.log(header.display(firstName, lastName, assignment));
-console.log("\n");
+
+// Call the console.log() function and output a well-formatted header with a line feed
+console.log(header.display(firstName, lastName, assignment), "\n");
 // Use string interpolation to output the return value from the function.
 console.log(`The sum of all odd values is: ${processOddItems(listOfValues)}, the expected value is 45.`)
 

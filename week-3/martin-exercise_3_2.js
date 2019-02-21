@@ -18,7 +18,11 @@ const header = require("../martin-header.js");
 ; Exercise 3.2
 ; Today's Date
 ;
-; if else:
+; match output:
+; false
+; true
+;
+; if else statements:
 ; Tractor and Trailer do not match.
 ; 1 and 1 match.
 ; Tractor and 1 do not match.

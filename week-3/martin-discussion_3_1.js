@@ -38,16 +38,16 @@ function processOddItems(values){
   // Use the isArray function on the Array object to test to see if the parameter passed in is a valid array
   if(Array.isArray(values) === true){
     // If the values parameter is not a valid array throw an error message.
-    throw new Error("The parameter values is not a valid array.")
+    throw Error("The parameter values is not a valid array.")
   }
 
   // Loop the array of values passed into the function using a for/in statement
   for(i in values){
-    // Use the modulus operator to identify if the value in the array is an odd number (3 % 1 = 0)
-    if(i % 1 === 0){
+    // Use the modulus operator to identify if the value in the array is an odd number (3 % 2 = 1)
+    if(values[i] % 2 === 1){
       // If the number from the array is odd add it to the function variable.
       // Using parseInt otherwise numbers are concatenated instead of summed.
-      sumOfOdds = sumOfOdds; + parseInt(i);
+      sumOfOdds = sumOfOdds; + parseInt(values[i]);
       // Break out of the for loop and continue executing the rest of the function.
       break;
     }

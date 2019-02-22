@@ -17,8 +17,8 @@ console.log(header.display("Troy", "Martin", "Assignment 3.4"), "\n");
 /*
 ; Expected output:
 ;
-; FirstName LastName
-; Exercise 3.3
+; Troy Martin
+; Exercise 3.4
 ; Today's Date
 ;
 ; Output from the number match game

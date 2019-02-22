@@ -17,7 +17,7 @@
 
 // lists details of formatted header, including first name, last name and assignment
 
-const header = require('../martin-header.js');
+const header = require('../baumann-header.js');
 
 console.log(header.display("Reva", "Baumann", "Discussion 3.1"));
 

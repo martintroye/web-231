@@ -80,10 +80,10 @@ for(var i = 0; i < 10; i++){
   var randomValue = randomNumber();
   // Call the match function to compare the random value against the global value
   if(match(randomValue, value) === true){
-    // Call the logMatch function to write out the message the the values match
+    // The values match, call the logMatch function to write out the message
     logMatch(randomValue, value);
   } else{
-    // Since the values do not match call the logMismatch function to write out the message that the values do not match
+    // The values do not match, call the logMismatch function to write out the message that the values do not match
     logMismatch(randomValue, value);
   }
 }

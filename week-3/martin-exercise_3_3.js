@@ -15,7 +15,7 @@ const header = require("../martin-header.js");
 /*
 ; Expected output:
 ;
-; FirstName LastName
+; Troy Martin
 ; Exercise 3.3
 ; Today's Date
 ;
@@ -23,40 +23,43 @@ const header = require("../martin-header.js");
 ;
 */
 
-/*
-  Expected output:
-
-
-
-  // Expected output
-
-*/
-
+// variable declaration and assignment goes here...
 let eventKeyCode = 13
 
-if (eventKeyCode === 13) {
-  console.log('The enter key was pressed.')
-} else if (eventKeyCode === 16) {
-  console.log('The shift key was pressed.')
-} else if (eventKeyCode === 32) {
-  console.log('The spacebar key was pressed.')
-} else if (eventKeyCode === 8) {
-  console.log('The backspace / delete key was pressed.')
-} else {
-  console.log('Unrecognized key.')
-}
-
-
-// variable declaration and assignment goes here...
-var firstName = "Troy";
-var lastName = "Martin";
-var assignment = "<Assignment>";
-
-
 // Call the console.log() function and output a well-formatted header with a line feed
-console.log(header.display(firstName, lastName, assignment), "\n");
+console.log(header.display("Troy", "Martin", "Exercise 3.3"), "\n");
 
 
 // output
-console.log("<output>");
+// Switch statement to evaluate the variable eventKeyCode and select the proper console.log statement based on the value.
+switch(eventKeyCode){
+  // Case evaluates the value for a match
+  case 13:
+    // Call the console.log function to output the message
+    console.log('The enter key was pressed.');
+    // Break causes the program to leave the switch statement
+    break;
+  case 16:
+    // Call the console.log function to output the message
+    console.log('The shift key was pressed.')
+    // Break causes the program to leave the switch statement
+    break;
+  case 32:
+    // Call the console.log function to output the message
+    console.log('The spacebar key was pressed.')
+    // Break causes the program to leave the switch statement
+    break;
+  case 8:
+    // Call the console.log function to output the message
+    console.log('The backspace / delete key was pressed.')
+    // Break causes the program to leave the switch statement
+    break;
+  // Default is the catch all for the switch statement if the value does not match a case
+  default:
+    // Call the console.log function to output the message
+    console.log('Unrecognized key.')
+    // Break causes the program to leave the switch statement
+    break;
+}
+
 // end program

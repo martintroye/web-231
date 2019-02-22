@@ -11,6 +11,8 @@
 
 // Require statement that imports the martin-header.js file from my root directory.
 const header = require("../martin-header.js");
+// Call the console.log() function and output a well-formatted header with a line feed
+console.log(header.display("Troy", "Martin", "Assignment 3.4"), "\n");
 
 /*
 ; Expected output:
@@ -19,51 +21,47 @@ const header = require("../martin-header.js");
 ; Exercise 3.3
 ; Today's Date
 ;
-; Output from the number match loop
-;
+; Output from the number match game
+; 10 results compared to the global variable value
 */
 
-/*
-  // Below is what I am expecting to see when I run your program - remove this before submitting your work
-  // 50% of you will not read this and lose 25% of the awardable points.
+// variable declaration and assignment
 
-  FirstName LastName
-  Assignment 3.4
-  Today's Date
-
-  -- DO THE NUMBERS MATCH GAME --
-  6 does not match 4!
-  6 does not match 7!
-  6 does not match 4!
-  6 does not match 8!
-  6 does not match 9!
-  6 does not match 7!
-  6 does match 6!
-  6 does not match 3!
-
-  Create a variable and assign it a value between 1 and 10
-
-  Take the functions you wrote in exercise 3.2 (match, logMismatch and logMatch) and copy them to this week's assignment.
-
-  Create a for loop with 10 iterations and inside the body of the for loop create a local variable and assign it a random number between 1 and 10
-  (use the randomNumber function I have provided in the starter code)
-
-  During each iteration of the for loop the random number should be reassigned a new random value (this means the placement of the variable should
-    be inside the for loop).
-
-  Next, create an if...else statement and use the match function to test if the variable in step one matches the random number created in step 3.
-  For true, call the logMatch function using the same two values.  For false, call the logMismatch function using the same two values.  If it is not
-  obviously by now, you are basically wrapping a for loop around the work you did in exercise 3.2.  And, instead of using multiple if...else statements
-  and test variables you will be using a for loop to generate the test variables and one if..else statement to check the generated values.
-
-*/
-
-// variable declaration and assignment goes here...
-var firstName = "Troy";
-var lastName = "Martin";
-var assignment = "<Assignment>";
+// This is the value we are trying to match the random number with
+var value = 6;
 
 // function declaration
+
+/*
+; Params: valueA, valueB
+; Response: True or False
+; Description: True, if valueA equals valueB. False, if valueA equals valueB.
+*/
+function match(valueA, valueB){
+  // Compare the parameters and return true or false based on the comparison
+  return valueB === valueA;
+}
+
+/*
+; Params: valueA, valueB
+; Response: undefined
+; Description: Log a message to the console describing that the parameters do not match.
+*/
+function logMismatch(valueA, valueB){
+  // log a message that the parameters do not match
+  console.log(`${valueA} and ${valueB} do not match!`);
+}
+
+/*
+; Params: valueA, valueB
+; Response: undefined
+; Description: Log a message to the console describing the parameters match.
+*/
+function logMatch(valueA, valueB){
+  // log a message that the parameters match
+  console.log(`${valueA} and ${valueB} match!`);
+}
+
 
 /**
  * Params: n/a
@@ -75,10 +73,19 @@ function randomNumber() {
   return Math.floor((Math.random() * 10) + 1)
 }
 
-// Call the console.log() function and output a well-formatted header with a line feed
-console.log(header.display(firstName, lastName, assignment), "\n");
-
-
 // output
-console.log("<output>");
+// For loop running 10 times
+for(var i = 0; i < 10; i++){
+  // Call the randomNumber function and assign the value to a local variable
+  var randomValue = randomNumber();
+  // Call the match function to compare the random value against the global value
+  if(match(randomValue, value) === true){
+    // Call the logMatch function to write out the message the the values match
+    logMatch(randomValue, value);
+  } else{
+    // Since the values do not match call the logMismatch function to write out the message that the values do not match
+    logMismatch(randomValue, value);
+  }
+}
+
 // end program

@@ -11,6 +11,8 @@
 
 // Require statement that imports the martin-header.js file from my root directory.
 const header = require("../martin-header.js");
+// Call the console.log() function and output a well-formatted header with a line feed
+console.log(header.display("Troy", "Martin", "Exercise 3.3"), "\n");
 
 /*
 ; Expected output:
@@ -26,8 +28,6 @@ const header = require("../martin-header.js");
 // variable declaration and assignment goes here...
 let eventKeyCode = 13
 
-// Call the console.log() function and output a well-formatted header with a line feed
-console.log(header.display("Troy", "Martin", "Exercise 3.3"), "\n");
 
 
 // output

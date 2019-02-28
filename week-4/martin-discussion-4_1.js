@@ -40,7 +40,7 @@ var processedValues = [];
 // Using a for loop add set of values to the queue array based on the seed value.
 for(var i = itemIdSeed; i < (itemIdSeed + queueLength); i++){
   // Using the Array.push function add the value to the end of the queue array and get the new length.
-  var len = queue.(i);
+  var len = queue.push(i);
 
   // Call the console.log function to output the value and the new length of the array.
   console.log(`Item ${i} has been queued, there are ${len} items in the queue.`)

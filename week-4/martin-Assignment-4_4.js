@@ -46,7 +46,7 @@ var filteredStates = [];
 /*
 ; Params: argA, argB
 ; Response: true, false
-; Description: Function to compare the values of argA and argB and return true or false.
+; Description: Function to compare the values of argA and argB and return true if they match, false if they do not.
 */
 function getState(argA, argB){
   // Compare argA to argB returning true if they match or false if they do not

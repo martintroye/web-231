@@ -10,17 +10,75 @@
 // start program
 // Require statement that imports the martin-header.js file from my root directory.
 const header = require("../header.js");
+
+/*
+;  Troy Martin
+;  Assignment 4.4
+;  Today's Date
+;
+;  -- ORIGINAL ARRAY --
+;  Alabama
+;  Nebraska
+;  Iowa
+;  California
+;  Nevada
+;
+;  -- SORTED ARRAY --
+;  Alabama
+;  California
+;  Iowa
+;  Nebraska
+;  Nevada
+;
+;  -- SELECTED VALUE --
+;  Iowa
+*/
+
+// variable declaration and assignment
+
+// Array to hold a list of states
+var states = ["Alabama", "Nebraska", "Iowa", "California", "Nevada"];
+// Array to hold result of filtering the list of states, initialize to an empty array.
+var filteredStates = [];
+
+// function declaration
+
+/*
+; Params: argA, argB
+; Response: true, false
+; Description: Function to compare the values of argA and argB and return true or false.
+*/
+function getState(argA, argB){
+  // Compare argA to argB returning true if they match or false if they do not
+  return argA === argB;
+}
+
+// output
 // Call the console.log() function and output a well-formatted header with a line feed
 console.log(header.display("Troy", "Martin", "Assignment 4.4"), "\n");
 
-/*
-; Expected output:
-; <Your expected output here>
-*/
+console.log("-- ORIGINAL ARRAY --")
+// Using the Array forEach method loop the list of states and call the console.log function to output the value.
+states.forEach(value => console.log(value));
+console.log("\n");
 
-// variable declaration and assignment goes here...
+console.log("-- SORTED ARRAY --")
+// Use the Array sort method to sort the array in alphabetical order, Array sort sorts the array in place. Since it is an alphabetical sort of strings a predicate sorting function is not required.
+states.sort();
+// Using the Array forEach method loop the list of states and call the console.log function to output the value.
+states.forEach(value => console.log(value));
 
-// output
-console.log("<output>");
+// Using the Array filter method and the getState function filter the list of states to the specified filter value.
+filteredStates = states.filter(function(value){
+  // Set a variable in the predicate to hold the filter value
+  var filterValue = "Iowa";
+  // Call the getState function to return true or false if the
+  return getState(value, filterValue);
+});
+
+console.log("\n");
+console.log("-- SELECTED VALUE --")
+// Call the console.log function to output the first value of the filtered list of states
+console.log(filteredStates[0]);
 
 // end program

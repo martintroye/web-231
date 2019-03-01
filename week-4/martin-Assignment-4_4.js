@@ -63,7 +63,7 @@ states.forEach(value => console.log(value));
 console.log("\n");
 
 console.log("-- SORTED ARRAY --")
-// Use the Array sort method to sort the array in alphabetical order, Array sort sorts the array in place. Since it is an alphabetical sort of strings a predicate sorting function is not required.
+// Use the Array sort method to sort the array in alphabetical order, The Array sort function, sorts the array in place. Since it is an alphabetical sort of strings a predicate sorting function is not required.
 states.sort();
 // Using the Array forEach method loop the list of states and call the console.log function to output the value.
 states.forEach(value => console.log(value));

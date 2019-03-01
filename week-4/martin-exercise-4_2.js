@@ -4,7 +4,7 @@
 ; Author: Troy Martin
 ; Date: 02/27/2019
 ; Modified By: Troy Martin
-; Description: Arrays, using arrays
+; Description: Arrays, output the values of an array to the console
 ;===========================================
 */
 // start program
@@ -12,10 +12,6 @@
 const header = require("../header.js");
 
 /*
-Create a string array of five (5) fruit items (order does not matter).
-Create a function called getFruit with one parameter (an array)
-In the body of the getFruit function iterate over the parameterized array (see step 2) and output the results using the console.log() function.
-Call the getFruit function and pass-in the array created in step 1 to test the results.
 ; Expected output:
 ; FirstName LastName
 ; Exercise 4.2

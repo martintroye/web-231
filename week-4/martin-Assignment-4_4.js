@@ -72,7 +72,7 @@ states.forEach(value => console.log(value));
 filteredStates = states.filter(function(value){
   // Set a variable in the predicate to hold the filter value
   var filterValue = "Iowa";
-  // Call the getState function to return true or false if the
+  // Call the getState function to return true if the value from the array matches the filterValue
   return getState(value, filterValue);
 });
 

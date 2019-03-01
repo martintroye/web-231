@@ -8,7 +8,7 @@
 ;===========================================
 */
 // start program
-const header = require('../martin-header.js');
+const header = require('../header.js');
 
 /*
 ;Create a function called fullName with two parameters (first and last name) and a return the two parameters as one string.

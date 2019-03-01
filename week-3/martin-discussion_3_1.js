@@ -11,7 +11,7 @@
 // start program
 
 // Require statement that imports the martin-header.js file from my root directory.
-const header = require('../martin-header.js');
+const header = require('../header.js');
 
 /*
 ; Expected output:

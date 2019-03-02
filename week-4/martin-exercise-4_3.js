@@ -62,6 +62,11 @@ function getValue(list, value){
 // Call the console.log() function and output a well-formatted header with a line feed
 console.log(header.display("Troy", "Martin", "Exercise 4.3"), "\n");
 
+console.log("-- DISPLAYING ARRAY ITEMS --");
+// Use the Array foreach method to loop the array and call the console.log function to output the value
+vehicles.forEach(item => console.log(item));
+
+console.log("\n");
 console.log("-- SELECTED VALUE --")
 // Call the getValue function to find a match
 getValue(vehicles, "Motorcycle");

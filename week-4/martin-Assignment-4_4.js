@@ -36,9 +36,9 @@ const header = require("../header.js");
 
 // variable declaration and assignment
 
-// Array to hold a list of states
+// Declare an array to hold a list of states
 var states = ["Alabama", "Nebraska", "Iowa", "California", "Nevada"];
-// Array to hold result of filtering the list of states, initialize to an empty array.
+// Declare an empty array to hold the results of filtering the list of states.
 var filteredStates = [];
 
 // function declaration
@@ -68,7 +68,7 @@ states.sort();
 // Using the Array forEach method loop the list of states and call the console.log function to output the value.
 states.forEach(value => console.log(value));
 
-// Using the Array filter method and the getState function filter the list of states to the specified filter value.
+// Using the Array filter method and the getState function filter the list of states.
 filteredStates = states.filter(function(value){
   // Set a variable in the predicate to hold the filter value
   var filterValue = "Iowa";

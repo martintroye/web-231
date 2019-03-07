@@ -63,8 +63,8 @@ var composers = [
 // function declaration
 
 /*
-; Params: composer
-; Response: composer
+; Params: {firstName: string, lastName: string, genre: string, rating: number}
+; Response: undefined
 ; Description: Function to output the last name, genre and rating for the composer.
 */
 function printLn(composer){

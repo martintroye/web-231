@@ -32,6 +32,7 @@ var scaleTickets = [];
 ; Description: Function to create a scale ticket object using random data.
 */
 function createScaleTicket (id, weight, moisture, createdOn){
+  // Create and return a new object using the parameters provided
   return id, weight, moisture, createdOn;
 }
 

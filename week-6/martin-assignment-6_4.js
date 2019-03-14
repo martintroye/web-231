@@ -24,12 +24,13 @@ console.log(header.display("Troy", "Martin", "Assignment 6.4"), "\n");
 */
 
 // variable declaration and assignment
-// Declare variables to hold a seed value for the ticket and person id.
+// Declare variables to hold a seed value for the person and ticket id.
 var personIdSeedValue = 1000;
 var ticketIdSeedValue = 105;
-
-// Declare a ticket variable and initialize by calling the createTicket function, passing the name, priority and calling the createPerson function to create a person for the ticket
-var helpDeskTicket = createTicket("Help Desk", "High", createPerson("Bob", "Jones", "Programmer I"));
+// Declare a variable and initialize by calling the createPerson function, passing the first and last name and a job title.
+var person = createPerson("Bob", "Jones", "Programmer I");
+// Declare a variable and initialize by calling the createTicket function, passing the name, priority and supplying a person object
+var helpDeskTicket = createTicket("Help Desk", "High", person);
 
 // function declaration
 /*

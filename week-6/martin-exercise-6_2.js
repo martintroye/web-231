@@ -20,7 +20,7 @@ console.log(header.display("Troy", "Martin", "Exercise 6.2"), "\n");
 ; Exercise 6.2
 ; Today's Date
 ;
-; Catch clause: <your custom message goes here>
+; Catch clause: Invalid scale ticket cannot be null or undefined.
 ; Finally clause reached...
 */
 

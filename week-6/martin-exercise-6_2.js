@@ -40,7 +40,7 @@ function validateScaleTicket (scaleTicket){
     || scaleTicket === undefined){
       // Throw a new error, letting the user know that the scale ticket was not defined properly
       throw new Error("Invalid scale ticket cannot be null or undefined.")
-    }
+  }
 }
 
 /*

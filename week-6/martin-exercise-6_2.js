@@ -15,12 +15,62 @@ console.log(header.display("Troy", "Martin", "Exercise 6.2"), "\n");
 
 /*
 ; Expected output:
-; <Your expected output here>
+;
+; Troy Martin
+; Exercise 6.2
+; Today's Date
+;
+; Catch clause: <your custom message goes here>
+; Finally clause reached...
 */
 
-// variable declaration and assignment goes here...
+// variable declaration and assignment
+
+
+// function declaration
+/*
+; Params: {id: number, weight: number, moisture: number, createdOn: Date}
+; Response: undefined.
+; Description: Function to validate a scale ticket.
+*/
+function validateScaleTicket (scaleTicket){
+
+  // Test to see if the scale ticket is null or undefined then throw an error if it is
+  if(scaleTicket === null
+    || scaleTicket === undefined){
+      // Throw a new error, letting the user know that the scale ticket was not defined properly
+      throw new Error("Invalid scale ticket cannot be null or undefined.")
+    }
+}
+
+/*
+; Params: message: string
+; Response: undefined.
+; Description: Function to write a message out to the console.
+*/
+function printLn (message){
+  // Call the console.log function to output the property values of the scaleTicket
+  console.log(message);
+}
 
 // output
-console.log("<output>");
+// Call the console.log function to output a line for formatting
+console.log("");
+
+// Initialize the try catch block
+try{
+  // Call the validateScaleTicket function with a null to force an error
+  validateScaleTicket(null);
+}
+// Define a catch block with the err parameter to contain the error message
+catch(err){
+  // Call the printLn function to print the error message to the console
+  printLn(`Catch clause: ${err}`);
+}
+// Define a finally block. The finally block will execute even if there is not an error
+finally{
+  // Call the printLn function to print a message out to the console
+  printLn("Finally clause reached...");
+}
 
 // end program

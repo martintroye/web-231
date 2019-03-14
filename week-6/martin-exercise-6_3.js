@@ -15,12 +15,26 @@ console.log(header.display("Troy", "Martin", "Exercise 6.3"), "\n");
 
 /*
 ; Expected output:
-; <Your expected output here>
+;
+; FirstName LastName
+; Exercise 6.3
+; Today's Date
+;
+; {id: 101, name: Help Desk Support, requester: Bob Jones}
 */
 
-// variable declaration and assignment goes here...
+// variable declaration and assignment
 
-// output
-console.log("<output>");
+// declare a ticket object
+var ticket = {
+  id: 1000,
+  name: 'John Doe',
+  requester: 'Troy Martin'
+};
+
+// Call the console.log function to output a line for formatting
+console.log("");
+// Call the console.log function to output the property values of the ticket object.
+console.log(`{id: ${ticket.id}, name: ${ticket.name}, requestor: ${ticket.requester}}`)
 
 // end program

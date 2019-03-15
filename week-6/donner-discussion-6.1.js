@@ -53,6 +53,7 @@ var starWars = {
 // martin - Commented out the sealing of the starWars.vaderSays object so that .who can be added
 //Object.seal(starWars.vaderSays);
 // This adds a value a new property to the vaderSays object
+// martin Closed the quote on the value for vaderSays.who.
 starWars.vaderSays.who = "I";
 
 

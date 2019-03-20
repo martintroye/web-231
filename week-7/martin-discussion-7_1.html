@@ -1,0 +1,69 @@
+<!--============================================
+; Title: Discussion 7.1
+; Author: Troy Martin
+; Date: 03/19/2019
+; Modified By: Troy Martin
+; Description: Discussion 7.1, Javascript in Web Browsers, at least two javascript selector errors
+;===========================================-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Martin Discussion 7.1</title>
+  <style>
+    div {
+      background-color: #000000;
+      color: #00ff00;
+      font-family: 'Lucida Console';
+      font-size: 1rem;
+    }
+
+    #console{
+      padding-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <script type="text/javascript">
+    /*
+    ; Expected output:
+    ;
+    ; Troy Martin
+    ; Discussion 7.1
+    ; Today's Date
+    ;
+    ; List of favorite movies
+    ;
+    */
+
+    // variable declaration and assignment
+    var firstName = "Troy";
+    var lastName = "Martin";
+    var assignment = "Discussion 7.1";
+    var headerMessage = firstName + " " + lastName + "<br/>" + assignment + "<br/>" + new Date().toLocaleDateString('en-US');
+    var favoriteMovies = ["Lord of the Rings Trilogy", "The Matrix Trilogy", "True Grit (the John Wayne version)", "The Longest Yard (the Burt Reynolds version)", "Master and Commander", "Mad Max", "A Christmas Story", "Monty Python's The Holy Grail", "Office Space", "Starship Troopers"];
+
+    function printLn(movieTitle, target){
+      var div = document.createElement("div");
+      var text = document.createTextNode(movieTitle);
+      div.appendChild(text);
+
+      document.getElementById(target).appendChild(div);
+    }
+
+    // Call the write function on to add a div with an id of header to the document.
+    document.write('<div id="header"></div>');
+    // Call the write function on to add a div with an id of header to the document.
+    document.write('<div id="console"></div>');
+
+    // Call the getElementById function to find the header div and set the innerHtml to the message.
+    document.getElementById("header").innerHTML = headerMessage;
+
+    // Use the Array forEach method to loop the list of my favorite movies and call the printLn function to output the values to the target.
+    favoriteMovies.forEach(movie => printLn(movie, "console"));
+
+  </script>
+</body>
+</html>

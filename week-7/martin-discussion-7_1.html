@@ -42,15 +42,27 @@
     var firstName = "Troy";
     var lastName = "Martin";
     var assignment = "Discussion 7.1";
+    // Combine the code attribution values to output as a header.
     var headerMessage = firstName + " " + lastName + "<br/>" + assignment + "<br/>" + new Date().toLocaleDateString('en-US');
+    // An array of movie names to be output
     var favoriteMovies = ["Lord of the Rings Trilogy", "The Matrix Trilogy", "True Grit (the John Wayne version)", "The Longest Yard (the Burt Reynolds version)", "Master and Commander", "Mad Max", "A Christmas Story", "Monty Python's The Holy Grail", "Office Space", "Starship Troopers"];
 
+    // function declaration
+    /*
+    ; Params: movieTitle: string, target: string
+    ; Response: undefined.
+    ; Description: Function output the movie title as a child div in the specified target element.
+    */
     function printLn(movieTitle, target){
+      // Call the createElement function to create a new div for the movieTitle
       var div = document.createElement("div");
+      // Call the createTextNode function to create the text for the div
       var text = document.createTextNode(movieTitle);
+      // Call the appendChild function to place the text node inside the div
       div.appendChild(text);
 
-      document.getElementById(target).appendChild(div);
+      // Call the getElementById method to find the target and append the div as a child element
+      document.getElementById(movieTitle).appendChild(div);
     }
 
     // Call the write function on to add a div with an id of header to the document.
@@ -59,7 +71,7 @@
     document.write('<div id="console"></div>');
 
     // Call the getElementById function to find the header div and set the innerHtml to the message.
-    document.getElementById("header").innerHTML = headerMessage;
+    document.getElementById(header).innerHTML = headerMessage;
 
     // Use the Array forEach method to loop the list of my favorite movies and call the printLn function to output the values to the target.
     favoriteMovies.forEach(movie => printLn(movie, "console"));

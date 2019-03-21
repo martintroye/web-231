@@ -1,0 +1,91 @@
+<!--============================================
+; Title: Exercise 7.3
+; Author: Troy Martin
+; Date: 03/21/2019
+; Modified By: Troy Martin
+; Description: Exercise 7.3, Client-Side Javascript, shopping lists
+;===========================================-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 7.3</title>
+  <!-- Link to style sheet provided in starter code -->
+  <link rel="stylesheet" href="../site.css">
+</head>
+<body>
+
+<!--/*
+; Expected output:
+;
+; Troy Martin
+; Exercise 7.3
+; Today's Date
+;
+; Shopping List v.1 as ordered list
+; Shopping List v.2 as table
+*/-->
+
+<!-- Embedded script to output the first version of the shopping list, document.write outputs after the script block.
+  Script block was split and put before the list div so that the first version of the shopping list is at the top of the document.-->
+<script type="text/javascript">
+  document.write("Troy Martin <br/> Exercise 7.3 <br/>" + new Date().toLocaleDateString('en-US') + "</br>");
+
+  // Call the write function to output the first version of the shopping list to the document.
+  document.write(
+    // Header for the shopping list
+    "<h1>SHOPPING LIST v.1</h1>" +
+    // Build the ordered list by concatenating the elements as individual strings
+    "<ol>" +
+      "<li>Oranges</li>" +
+      "<li>Apples</li>" +
+      "<li>Pears</li>" +
+      "<li>Limes</li>" +
+      "<li>Lemons</li>" +
+    "</ol>"
+  );
+</script>
+
+<!-- Element to contain the second version of the shopping list -->
+<div id="list"></div>
+
+<!-- Embedded script to output the second version of the shopping list, requires that a div with the id of list be defined in the DOM before running. -->
+<script type="text/javascript">
+  // Call the getElementById function on the document to get the div with an id of list, set the inner html of the div to the shopping list table.
+  document.getElementById("list").innerHTML =
+    // Header for the shopping list
+    "<h1>SHOPPING LIST v.2</h1>" +
+    // Build the table by concatenating the elements as individual strings
+    "<table>" +
+      "<thead>" +
+        "<tr>" +
+          "<th>Id</th>" +
+          "<th>Item</th>" +
+        "</tr>" +
+      "</thead>" +
+      "<tbody>" +
+        "<tr>" +
+          "<td>1</td>" +
+          "<td>Oranges</td>" +
+        "</tr>" +
+        "<tr>" +
+          "<td>2</td>" +
+          "<td>Apples</td>" +
+        "</tr>" +
+        "<tr>" +
+          "<td>3</td>" +
+          "<td>Pears</td>" +
+        "</tr>" +
+        "<tr>" +
+          "<td>4</td>" +
+          "<td>Limes</td>" +
+        "</tr>" +
+        "<tr>" +
+          "<td>5</td>" +
+          "<td>Lemons</td>" +
+        "</tr>" +
+      "</tbody>"
+    "</table>";
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!--
+============================================
+; Title:  donner-assignment-7.1.html
+; Author: Adam Donner
+; Date:   20 March 2019
+; Description: Demonstrates the use of client-side inline JavaScript functions with 2 errors
+;===========================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calculator</title>
+	<meta name="description" content="donner-discussion-7.1">
+
+<!-- This displays todays date and a simple calculator. -->
+<!-- martin To embed a block of Javascript code in the page we use a script block, changed the misspelled scriqt to script-->
+  <script>
+	function todaysDate ()
+	{
+    var elt = document.getElementById("date")
+    var now = new Date().toLocaleDateString('en-US')
+    elt.innerHTML = now
+    setTimeout(displayTime, 10000)
+  }
+	window.onload = todaysDate;
+  function sumNumbers()
+  {
+    var add1=document.getElementById("calculator").num1.value;
+    var add2=document.getElementById("calculator").num2.value;
+    var answer=Number(add1)+Number(add2);
+    alert(answer);
+  }
+  function subtractNumbers()
+  {
+    var sub1=document.getElementById("calculator").num1.value;
+    var sub2=document.getElementById("calculator").num2.value;
+    // martin The Number constructor was closed with a curly brace instead of a parenthesis causing a parsing error.
+    var answer=Number(sub1)-Number(sub2);
+    alert(answer);
+  }
+  function multiplyNumbers()
+  {
+    // martin The call to the getElementById function was closed with a curly brace instead of a parenthesis causing a parsing error.
+    var mult1=document.getElementById("calculator").num1.value;
+    var mult2=document.getElementById("calculator").num2.value;
+    var answer=Number(mult1)*Number(mult2);
+    alert(answer);
+  }
+  function divideNumbers()
+  {
+    var div1=document.getElementById("calculator").num1.value;
+    var div2=document.getElementById("calculator").num2.value;
+    var answer=Number(div1)/Number(div2);
+    alert(answer);
+  }
+  </script>
+
+</head>
+<body>
+	<h4>Todays Date:
+	<span id="date"></span></h4>
+
+	<form id="calculator">
+    First Number <input type="number" name="num1">
+    Second Number <input type="number" name="num2">
+    <input type="submit" value="Add" onClick="sumNumbers()">
+    <input type="submit" value="Subtract" onClick="subtractNumbers()">
+    <input type="submit" value="Multiply" onClick="multiplyNumbers()">
+    <!-- martin Input tag was not closed with a right arrow so the page would not parse properly -->
+    <input type="submit" value="Divide" onClick="divideNumbers()">
+  </form>
+
+
+
+	</body>
+</html>

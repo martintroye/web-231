@@ -1,0 +1,97 @@
+<!--============================================
+; Title: Assignment 7.4
+; Author: Troy Martin
+; Date: 03/21/2019
+; Modified By: Troy Martin
+; Description: Assignment 7.4, Inline Javascript functions, computer components
+;===========================================-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assignment 7.4</title>
+
+  <!-- you will need to the href to point to your root directories css file -->
+  <link rel="stylesheet" href="../site.css">
+
+</head>
+<body>
+<!--/*
+; Expected output:
+;
+; Troy Martin
+; Assignment 7.4
+; Today's Date
+;
+; Computer Components table
+*/-->
+
+<!-- Embedded script to build and output the computer component table.-->
+<script type="text/javascript">
+  // Call the write function to output the common header information
+  document.write("Troy Martin <br/> Assignment 7.4 <br/>" + new Date().toLocaleDateString('en-US') + "</br>");
+
+  // variable declaration and assignment
+  // Declare a variable that will hold the table body
+  var tableBody = "";
+  // Declare an array variable to hold a list of Component objects
+  var components = [
+    // Using the new keyword create an instance of the Component function passing in various arguments.
+    new Component(1, "Laptop", "1,500.99"),
+    new Component(2, "Motherboard", "35.79"),
+    new Component(3, "Monitor", "174.99"),
+    new Component(4, "Mouse", "13.99"),
+    new Component(5, "Keyboard", "14.50"),
+  ];
+
+  // function declaration
+  /*
+  ; Params: id: number, name: string, amount: string
+  ; Response: undefined.
+  ; Description: Function defining a computer component.
+  */
+  function Component(id, name, amount){
+    // Set the properties of the function to the parameter value
+    this.id = id;
+    this.name = name;
+    this.amount = amount;
+  }
+
+  // Call the write function to add a div with an id of list to the page
+  document.write("<div id='list'></list>");
+
+  // Using the Array foreach loop the list of components and build the table body string
+  components.forEach(component => {
+    // Append the row to the string using a template string to place the component values inline javascript functions defined on the anchor tags
+    tableBody += `
+      <tr>
+        <td>${component.id}</td>
+        <td>${component.name}</td>
+        <td>${component.amount}</td>
+        <td><a href="javascript:alert('${component.id}')">EDIT</a> | <a href="javascript:confirm('Are you sure')">DELETE</a>
+      </tr>`;
+  })
+
+  // Call the getElementById function on the document to get the div with an id of list, set the inner html of the div to the shopping list table.
+  document.getElementById("list").innerHTML =
+    // Header for the computer component list
+    "<h1>COMPUTER COMPONENTS</h1>" +
+    // Build the table by concatenating the headers and the built up table body string
+    "<table>" +
+      "<thead>" +
+        "<tr>" +
+          "<th>Id</th>" +
+          "<th>Name</th>" +
+          "<th>Amount</th>" +
+          "<th>Functions</th>" +
+        "</tr>" +
+      "</thead>" +
+      "<tbody>" +
+        tableBody +
+      "</tbody>"
+    "</table>";
+
+</script>
+
+</body>
+</html>

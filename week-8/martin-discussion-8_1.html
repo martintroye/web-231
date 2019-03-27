@@ -1,0 +1,78 @@
+<!--============================================
+; Title: Discussion 8.1
+; Author: Troy Martin
+; Date: 03/26/2019
+; Modified By: Troy Martin
+; Description: Discussion 8.1, DOM Manipulation (jQuery), web page with at least two errors
+;===========================================-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Discussion 8.1</title>
+  <!-- Include the jquery library  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Link to style sheet provided in starter code -->
+  <link rel="stylesheet" href="../site.css">
+  <!-- Link to fonts used in the page -->
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <style>
+    html {
+      font-family: "Ubuntu","Open Sans";
+    }
+    .odd {
+      background: #CCC
+    }
+  </style>
+</head>
+<body>
+<!--/*
+; Expected output:
+;
+; Troy Martin
+; Discussion 8.1
+; Today's Date
+;
+; My favorite movies
+; list of favorite movies
+*/-->
+
+<!-- container to handle output to the page -->
+<div id="movieList" class="container"></div>
+
+<!-- Embedded script to output movie list.-->
+<script type="text/javascript">
+  // variable declaration and assignment
+  // Declare variables used to output header information
+  var name = "Troy Martin";
+  var assignment = "Discussion 8.1";
+  var today = new Date().toLocaleDateString('en-US');
+
+  // An array of movie names to be output
+  var favoriteMovies = ["Lord of the Rings Trilogy", "The Matrix Trilogy", "True Grit (the John Wayne version)", "The Longest Yard (the Burt Reynolds version)", "Master and Commander", "Mad Max", "A Christmas Story", "Monty Python's The Holy Grail", "Office Space", "Starship Troopers"];
+
+  // function declaration
+
+  // jQuery function to execute after the dom is ready
+  $(function(){
+    $('.container').append(`${name}<br/>${assignment}<br/>${today}`);
+
+    // Use the jQuery append function to add a header to the container
+    $('#container').append("<h1>My favorite movies</h1>");
+
+    // Call Array forEach function to loop the list of movies and append them to the page
+    favoriteMovies.forEach(movie => {
+      // Use the jQuery appendTo function to add the movie to the container named movieList
+      $(`<div class="movie">${movie}</div>`).appendToEnd($('.movieList'))
+    });
+
+    // Use a jQuery selector and filter to select the odd elements and apply a class to set the background color.
+    $("#movie:odd").addClass("odd");
+  });
+</script>
+
+</body>
+</html>

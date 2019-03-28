@@ -1,0 +1,117 @@
+<!--============================================
+; Title: Exercise 8.2
+; Author: Troy Martin
+; Date: 03/26/2019
+; Modified By: Troy Martin
+; Description: Exercise 8.2, Dynamic HTML
+;===========================================-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 8.2</title>
+  <!-- Link to fonts used in the page -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <!-- Embedded styles to apply font and other formatting for the top bar and list of fruits -->
+  <style type="text/css">
+    html {
+      font-family: "Roboto", "Open Sans";
+    }
+    ul {
+      list-style: none;
+      padding-inline-start: 0;
+    }
+    .centered{
+      margin: 0 auto;
+    }
+    .topBar{
+      background-color: #CCC;
+      margin-bottom: 20px;
+      padding: 1rem;
+    }
+    .fruits{
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+<!--/*
+; Expected output:
+;
+; Troy Martin
+; Exercise 8.2
+; Today's Date
+;
+; Top bar with different background color
+; List of fruits
+*/-->
+
+<!-- Container to output top bar and list of fruits from starter code -->
+<div id="fruits"></div>
+
+<!-- Embedded script to output movie list.-->
+<script type="text/javascript">
+  // variable declaration and assignment
+
+  // Declare variables used to output header information
+  var name = "Troy Martin";
+  var assignment = "Exercise 8.2";
+  var today = new Date().toLocaleDateString('en-US');
+
+  // An array of fruit objects to be output
+  var fruits = [
+    {id: 1, type: "Apples"},
+    {id: 2, type: "Orange"},
+    {id: 3, type: "Grapes"},
+    {id: 4, type: "Strawberries"},
+    {id: 5, type: "Watermelon"},
+    {id: 6, type: "Cantaloupe"},
+    {id: 7, type: "Grapefruit"},
+    {id: 8, type: "Blueberries"},
+    {id: 9, type: "Blackberries"},
+    {id: 10, type: "Raspberries"}
+  ];
+
+  // Call th getElementById function on the document to get the element to output the list of fruits into
+  const container = document.getElementById("fruits");
+
+  // function declaration
+  /*
+  ; Params: id: fruits: {id: number, type: string}
+  ; Response: HTML string with top bar and unordered list of fruits.
+  ; Description: Function to output the top bar and list of fruits.
+  */
+  function printLn(fruits){
+    // Create the string representing the top bar and output the code attribution values
+    const topBar = `<div class="topBar">${name}<br/>${assignment}<br/>${today}</div>`;
+
+    // Create a container for the list of fruits
+    var list = `<div class="fruits">`;
+    // Add a title to the list of fruits
+    list += `<h1 class="centered">List of fruits</h1>`;
+    // Create the unordered list
+    list += `<ul class="centered">`;
+
+    // Call the Array forEach function to loop the list of fruits
+    fruits.forEach(fruit => {
+      // Add a list item for each fruit outputting the type
+      list += `<li>${fruit.type}</li>`;
+    });
+
+    // Close the unordered list
+    list += "</ul>";
+    // Close the container for the list of fruits
+    list += "</div>";
+
+    // return the html string of the top bar and list of fruits
+    return topBar + list;
+  }
+
+  // Set the html on the fruits div by calling the printLn function
+  container.innerHTML = printLn(fruits);
+</script>
+
+
+</body>
+</html>

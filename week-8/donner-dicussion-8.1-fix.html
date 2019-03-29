@@ -1,0 +1,88 @@
+<!--
+============================================
+; Title:  donner-discussion-8.1.html
+; Author: Adam Donner
+; Date:   26 March 2019
+; Description: jQuery program with 2 errors
+;===========================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Discussion 7.1</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+<h2>Click to Collapse</h2>
+
+<table>
+    <tr  class="header">
+        <th colspan="2">Superheros <span>-</span></th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Batman</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Hellboy</td>
+    <tr>
+        <td>3</td>
+        <td>Green Lantern</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Constantine</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Captain Hammer</td>
+      </tr>
+    </tr>
+    <tr  class="header">
+      <th colspan="2">Header <span>-</span></th>
+    </tr>
+  </tr>
+    <tr>
+      <td>1</td>
+      <td>Dr. Horrible</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Harley Quinn</td>
+    <tr>
+      <td>3</td>
+      <td>Joker</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Lex Luthor</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Green Goblin</td>
+    </tr>
+  </table>
+
+
+<script type="text/javascript">
+$("h2").css("color","blue")
+$("tr:odd").css("background-color","cyan")
+$("tr:even").css("background-color","darkgrey")
+$("table, tr, td").css("border", "solid black 1px")
+$("table").css("border-collapse","collapse")
+$('.header').click(function(){
+  // martin in the call to the text function the second parameter value was misspelled
+  $(this).find('span').text(function(_, value){return value=='-'?'+':'-'});
+  // martin in the call to the slide toggle function the supplied function to run on complete was written with curly braces instead of parenthesis
+  $(this).nextUntil('tr.header').slideToggle(100, function(){
+    });
+});7
+</script>
+
+</body>
+</html>

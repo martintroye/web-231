@@ -76,7 +76,7 @@ $("tr:even").css("background-color","darkgrey")
 $("table, tr, td").css("border", "solid black 1px")
 $("table").css("border-collapse","collapse")
 $('.header').click(function(){
-  // martin in the call to the text function the second parameter value was misspelled
+  // martin in the call to the text function the text parameter name does not match the name used inside the function.
   $(this).find('span').text(function(_, value){return value=='-'?'+':'-'});
   // martin in the call to the slide toggle function the supplied function to run on complete was written with curly braces instead of parenthesis
   $(this).nextUntil('tr.header').slideToggle(100, function(){

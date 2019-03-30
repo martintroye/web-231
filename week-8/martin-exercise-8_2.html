@@ -24,23 +24,24 @@
     .centered{
       margin: 0 auto;
     }
-    .fruits{
+    #fruits{
       display: flex;
       flex-direction: column;
-      margin-top: 100px;
-
     }
     body:before {
       content: attr(data-value);
       white-space: pre;
       word-wrap: break-word;
       display: block;
-      position: fixed;
       background: #CCC;
       left: 0;
       right: 0;
       height: 80px;
       top: 0;
+    }
+    div:before {
+      content: "";
+      margin-bottom: 20px;
     }
   </style>
 </head>
@@ -94,10 +95,8 @@
   ; Description: Function to output the top bar and list of fruits.
   */
   function printLn(fruits){
-    // Create a container for the list of fruits
-    var list = `<div class="fruits">`;
     // Add a title to the list of fruits
-    list += `<h1 class="centered">List of fruits</h1>`;
+    var list = `<h1 class="centered">List of fruits</h1>`;
     // Create the unordered list
     list += `<ul class="centered">`;
 
@@ -109,8 +108,6 @@
 
     // Close the unordered list
     list += "</ul>";
-    // Close the container for the list of fruits
-    list += "</div>";
 
     // return the html string of the top bar and list of fruits
     return list;

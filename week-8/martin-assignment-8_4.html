@@ -15,11 +15,30 @@
 
   <!-- Link to style sheet provided in starter code -->
   <link rel="stylesheet" href="../site.css">
+  <!-- Link to fonts used in the page -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 
   <style type="text/css">
     #employee tbody tr:hover {
       cursor: pointer;
       background-color: #ffff99;
+    }
+    html {
+      font-family: "Roboto", "Open Sans";
+    }
+    body::before {
+      content: attr(data-value);
+      white-space: pre;
+      word-wrap: break-word;
+      display: block;
+      background: #CCC;
+      left: 0;
+      right: 0;
+      height: 80px;
+      top: 0;
+    }
+    table{
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -31,23 +50,90 @@
 ; Assignment 8.4
 ; Today's Date
 ;
+; Table listing five employees with the ability to click on a row and view the employee information in an alert
 */-->
-
-<!-- Embedded script to output the required header information.-->
-<script type="text/javascript">
-  document.write("Troy Martin <br/> Discussion 8.1 <br/>" + new Date().toLocaleDateString('en-US') + "</br>");
-</script>
 
 <div id="emps"></div>
 
+<!-- Embedded script to build list of employees.-->
 <script type="text/javascript">
+  // variable declaration and assignment
+
+  // Declare variables used to output header information
+  var name = "Troy Martin";
+  var assignment = "Assignment 8.4";
+  var today = new Date().toLocaleDateString('en-US');
+
+  // Create the string representing the top bar and output the code attribution values. Use unicode characters for line break because not being rendered.
+  var topBar = `${name}\u000D\u000A${assignment}\u000D\u000A${today}`;
+
+  // Declare an array of Employee constructor objects
+  var employees = [
+    // Using the new keyword create an instance of the Employee function passing in various arguments.
+    new Employee(1, "Thomas", "Edison", "Software Engineer"),
+    new Employee(2, "Benjamin", "Franklin", "Programmer"),
+    new Employee(3, "Nikola", "Tesla", "Project Manager"),
+    new Employee(4, "Charles", "Babbage", "Product Manager"),
+    new Employee(5, "Alexander", "Bell", "Business Analyst")
+  ];
+
+  // function declaration
+  /*
+  ; Params: id: number, firstName: string, lastName: string, title: string
+  ; Response: undefined.
+  ; Description: Function defining an employee.
+  */
+  function Employee(id, firstName, lastName, title){
+    // Set the properties of the function to the parameter value
+    this.id = id;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.title = title;
+  }
+
+  /*
+  ; Params: id: number
+  ; Response: undefined.
+  ; Description: Function to find and output employee information using an alert.
+  */
+  function getEmployee(id){
+    // Use the Array find function to get the first matching employee from the array, using == because id comes in as a string from the cell
+    var employee = employees.find(element => element.id == id)
+
+    // Use the control statement to make sure we found an employee that matches
+    if(employee != null
+    && employee != undefined){
+      // Call the alert function to output the employee information
+      alert(`ID: ${employee.id} Name: ${employee.firstName} ${employee.lastName} Title: ${employee.title}`);
+    }
+  }
 
   // jQuery onClick event
   // Don't remove this, just add your code to the body of the event (curly braces)
   $(function () {
-    $("table tr").click(function () {
+    // Declare and assign the output variable with the table html
+    var output = `<table id="employee"><thead><tr><th>Id</th><th>First Name</th><th>Last Name</th><th>title</th></thead><tbody>`;
+    // Use the Array forEach function to loop the employee list to create rows.
+    employees.forEach(emp => {
+      // Append the row with the employee information to the output variable
+      output += `<tr><td>${emp.id}</td><td>${emp.firstName}</td><td>${emp.lastName}</td><td>${emp.title}</td></tr>`;
+    });
+    // Append the closing tags of the table body and the table to the variable
+    output += "</tbody></table>";
 
+    // Call the getElmentById function on the emps div to set the html to the html string from the output variable
+    document.getElementById("emps").innerHTML = output;
+
+    $("table tr").click(function () {
+      // this represents the row found by the jQuery selector, call the find function to select the first column (ID) and get its value
+      const id = $(this).find('td:first').html()
+      // Call the getEmployee function to find and output the employee information for the id
+      getEmployee(id);
     })
+
+    // Call the document querySelector function and set the data attribute for content defined in the style body:before
+    document.querySelector("body").setAttribute("data-value", topBar);
+
   });
 </script>
 </body>

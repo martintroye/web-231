@@ -24,14 +24,23 @@
     .centered{
       margin: 0 auto;
     }
-    .topBar{
-      background-color: #CCC;
-      margin-bottom: 20px;
-      padding: 1rem;
-    }
     .fruits{
       display: flex;
       flex-direction: column;
+      margin-top: 100px;
+
+    }
+    body:before {
+      content: attr(data-value);
+      white-space: pre;
+      word-wrap: break-word;
+      display: block;
+      position: fixed;
+      background: #CCC;
+      left: 0;
+      right: 0;
+      height: 80px;
+      top: 0;
     }
   </style>
 </head>
@@ -75,6 +84,8 @@
 
   // Call th getElementById function on the document to get the element to output the list of fruits into
   const container = document.getElementById("fruits");
+  // Create the string representing the top bar and output the code attribution values. Use unicode characters for line break because not being rendered.
+  var topBar = `${name}\u000D\u000A${assignment}\u000D\u000A${today}`;
 
   // function declaration
   /*
@@ -83,9 +94,6 @@
   ; Description: Function to output the top bar and list of fruits.
   */
   function printLn(fruits){
-    // Create the string representing the top bar and output the code attribution values
-    const topBar = `<div class="topBar">${name}<br/>${assignment}<br/>${today}</div>`;
-
     // Create a container for the list of fruits
     var list = `<div class="fruits">`;
     // Add a title to the list of fruits
@@ -105,11 +113,14 @@
     list += "</div>";
 
     // return the html string of the top bar and list of fruits
-    return topBar + list;
+    return list;
   }
 
   // Set the html on the fruits div by calling the printLn function
   container.innerHTML = printLn(fruits);
+  // Call the document querySelector function and set the data attribute for content defined in the style body:before
+  document.querySelector("body").setAttribute("data-value", topBar);
+
 </script>
 
 

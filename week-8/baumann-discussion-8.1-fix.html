@@ -1,0 +1,83 @@
+<!--
+=============================================
+; Title: baumann-discussion-8.1.js
+; Author: Reva Baumann
+; Date: 28 March 2019
+; Modified by:
+; Description:
+;============================================
+-->
+
+<!-- marting not a bug, wrapped javascript formatted comment in html comment-->
+<!--/*
+Expected output:
+  Reva Baumann
+  Discussion 8.1
+  21 March 2019
+
+  List and Ages of Superheroes, along with date and time display.
+
+*/-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta name="description"
+    content="HTML & Javascript" />
+<meta name="keywords"
+    content=  "" />
+<meta name="author"
+    content="Reva Baumann" />
+<title>Discussion 8.1</title>
+
+
+    <style type="text/css">
+
+    </style>
+</head>
+    <body>
+<h2 style="columns: #000000;">Hero Identity</h2>
+
+<!-- Displays a simple table of superhero names and ages-->
+<table style="width:100%">
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Age</th>
+        </tr>
+        <tr>
+          <td>Diana</td>
+          <td>Prince</td>
+          <td>28</td>
+        </tr>
+        <tr>
+          <td>Bruce</td>
+          <td>Wayne</td>
+          <td>31</td>
+        </tr>
+        <tr>
+                <td>Clark</td>
+                <td>Kent</td>
+                <td>30</td>
+              </tr>
+              <tr>
+                <td>Billy</td>
+                <td>Batson</td>
+                <td>12</td>
+              </tr>
+      </table>
+
+
+<!-- martin In the call to document.getElementById below the element demo did not exist on the page added a div to output the date-->
+<div id="demo"></div>
+
+<!--Simple button that displays date and time-->
+<!-- martin In the call to document.getElementById separated the innerHTML with a period-->
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+        </script>
+    </body>
+</html>

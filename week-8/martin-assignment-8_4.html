@@ -1,0 +1,54 @@
+<!--============================================
+; Title: Exercise 8.4
+; Author: Troy Martin
+; Date: 03/26/2019
+; Modified By: Troy Martin
+; Description: Exercise 8.4, Putting it all together
+;===========================================-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assignment 8.4</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Link to style sheet provided in starter code -->
+  <link rel="stylesheet" href="../site.css">
+
+  <style type="text/css">
+    #employee tbody tr:hover {
+      cursor: pointer;
+      background-color: #ffff99;
+    }
+  </style>
+</head>
+<body>
+<!--/*
+; Expected output:
+;
+; Troy Martin
+; Assignment 8.4
+; Today's Date
+;
+*/-->
+
+<!-- Embedded script to output the required header information.-->
+<script type="text/javascript">
+  document.write("Troy Martin <br/> Discussion 8.1 <br/>" + new Date().toLocaleDateString('en-US') + "</br>");
+</script>
+
+<div id="emps"></div>
+
+<script type="text/javascript">
+
+  // jQuery onClick event
+  // Don't remove this, just add your code to the body of the event (curly braces)
+  $(function () {
+    $("table tr").click(function () {
+
+    })
+  });
+</script>
+</body>
+</html>

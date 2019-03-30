@@ -22,15 +22,26 @@
     html {
       font-family: "Roboto", "Open Sans";
     }
-    div{
-      margin-bottom: 20px;
+    body:before {
+      content: attr(data-value);
+      white-space: pre;
+      word-wrap: break-word;
+      display: block;
+      background: #CCC;
+      left: 0;
+      right: 0;
+      height: 80px;
+      top: 0;
     }
-    .topBar{
-      background-color: #CCC;
-      padding: 1rem;
+    div:before {
+      content: "";
+      margin-bottom: 20px;
     }
     .partA, .partB{
       margin-left: 20px;
+    }
+    tr.hover{
+      cursor: pointer;
     }
   </style>
 </head>
@@ -42,16 +53,18 @@
 ; Exercise 8.3
 ; Today's Date
 ;
+; Part A - paragraph and button, button will toggle the visibility of the paragraph
+; Part B - Table of fruits table rows generated in JavaScript
 */-->
 
-<div class="topBar"></div>
-
+<!-- HTML paragraph to toggle visibility using a button from JavaScript-->
 <div class="partA">
   <h1>Lorem Ipsum</h1>
   <p class="para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis pharetra iaculis. Integer porta aliquam purus non bibendum. Duis sit amet ante orci. Praesent at tincidunt nunc. Nullam scelerisque auctor lorem ut consectetur. Nam eget interdum ante. Fusce mattis, eros sed semper convallis, tellus augue eleifend massa, in ornare dolor sem at massa. Morbi lectus mi, aliquet at eleifend sit amet, gravida a odio. Nunc at tincidunt massa. In nec mattis urna. Sed lobortis orci sed nisl bibendum interdum. Aenean odio turpis, ornare quis arcu ac, suscipit tincidunt mi. Morbi blandit ipsum in massa vestibulum semper. Nullam interdum est in ex pellentesque, id rutrum ante porta. Suspendisse dapibus consequat odio sed auctor.</p>
   <button id="btnToggle">Toggle</button>
 </div>
 
+<!-- HTML fruit base fruit table, will be populated by JavaScript-->
 <div class="partB">
   <h1>Fruits</h1>
   <table>
@@ -59,7 +72,7 @@
       <th>Id</th>
       <th>Type</th>
     </thead>
-    <tbody id="list">
+    <tbody>
     </tbody>
   </table>
 </div>
@@ -87,45 +100,54 @@
     {id: 10, type: "Raspberries"}
   ];
 
+  // Create the string representing the top bar and output the code attribution values. Use unicode characters for line break because not being rendered.
+  var topBar = `${name}\u000D\u000A${assignment}\u000D\u000A${today}`;
 
   // function declaration
   $(function(){
     // Using jQuery select the div to output the html into
-    $(".topBar").html(printTopBar(name, assignment, today));
     $("#btnToggle").click(function(){
+      // Call the event preventDefault function to short circuit the standard click event.
       event.preventDefault();
+      // Using the jQuery toggle function without a parameter value causes the display to toggle on and off.
       $(".para").toggle()
     });
 
+    // Call the printLn function to append the data from the fruit objects into table rows.
     printLn(fruits);
 
+    // Call the document querySelector function and set the data attribute for content defined in the style body:before
+    document.querySelector("body").setAttribute("data-value", topBar);
   });
 
   /*
   ; Params: id: fruits: {id: number, type: string}
-  ; Response: HTML string with top bar and unordered list of fruits.
-  ; Description: Function to output the top bar and list of fruits.
+  ; Response: undefined
+  ; Description: Function to output table rows containing the fruit data.
   */
   function printLn(fruits){
+    // Call the Array forEach function to loop the fruits array to create rows on the table
     fruits.forEach(element => {
-      $("#list").append(`<tr><td>${element.id}</td><td>${element.type}</td></tr>`);
+      // Use the jQuery selector to append the row to the table display the fruit id and type
+      $(".partB > table tbody").append(`<tr data-id="${element.id}" class="hover"><td>${element.id}</td><td>${element.type}</td></tr>`);
+    });
+
+    // Using jQuery select the all the table rows and apply the click event
+    $(".partB table tbody tr").click(function(){
+      // Call the event preventDefault function to short circuit the standard click event.
+      event.preventDefault();
+      // this represents the table row, call the data function to retrieve the data attribute named id
+      const id = $(this).data("id");
+      // Call the Array find function to get the matching fruit from the row that was clicked.
+      const fruit = fruits.find(function(element){
+        // If the id of the fruit matches the one that was clicked return it
+        return element.id === id;
+      });
+
+      // Call the alert function to display the id and type of the selected fruit
+      alert(`ID: ${fruit.id} Type: ${fruit.type}`);
     });
   }
-
-    /*
-  ; Params: name: string, assignment: string, today: string
-  ; Response: HTML string with top bar information.
-  ; Description: Function to output the top bar information.
-  */
-  function printTopBar(name, assignment, today){
-    // Create the string representing the top bar and output the code attribution values
-    const topBar = `${name}<br/>${assignment}<br/>${today}`;
-    // return the html string of the top bar and list of fruits
-    return topBar;
-  }
-
 </script>
-
-
 </body>
 </html>
